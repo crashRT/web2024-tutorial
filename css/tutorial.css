@@ -1,0 +1,163 @@
+/** CSS変数の定義 */
+:root {
+  /** 色 */
+  --mainColor: #b82e6a;
+  --subColor: #4072b3;
+
+  /** Homeページ */
+  --white: #fff;
+  --backgroundColor: #f2f2f2;
+  --heading1TextColor: var(--mainColor);
+  --heading2TextColor: var(--subColor);
+  --baseTextColor: #2d3d61;
+  --linkTextColor: var(--subColor);
+  --linkTextHoverColor: var(--mainColor);
+  --boldTextColor: #131c30;
+  --blogHorizontalLineColor: #e3e7eb;
+  --iconShadow1Color: #00000029;
+  --iconShadow2Color: #d2d2d290;
+  --iconShadow3Color: #7070700d;
+  --iconShadow4Color: #fff9;
+  --headerShadowColor: #acbbc94d;
+  --footerShadowColor: #7070701a;
+  --whatIsKMCText1Color: #6583b4;
+  --whatIsKMCText2Color: #2d8ebd;
+  --whatIsKMCText3Color: #2ab4be;
+  --meetingTextColor: #00000087;
+  --transparent: #0000;
+
+  /** Aboutページ */
+  --whatIsKMCTextAboutColor: #4072b3;
+
+  /** Membersページ */
+  --memberTableLineColor: #d9e1e9;
+  --memberTableHeaderColor: #dbdbdb;
+
+  /** レイアウトサイズ */
+  --desktopContentWidth: 982px;
+  --mobileContentWidth: 362px;
+
+  /* 本文の横幅 */
+  --contentMargin: 25px;
+  --contentWidth: calc(var(--desktopContentWidth) - 2 * var(--contentMargin));
+
+  @media (--viewport-mobile) {
+    --contentMargin: 25px;
+    --contentWidth: calc(100vw - 2 * var(--contentMargin));
+  }
+
+  /** ヘッダサイズ **/
+  --headerHeight: 128px;
+
+  @media (--viewport-mobile) {
+    --headerHeight: 80px;
+  }
+
+  /** フォントサイズ */
+
+  /** 共通 */
+  --bodySize: 18px;
+  --lineHeight: 1.5;
+  --heading1Size: 42px;
+  --heading2Size: 30px;
+  --heading3Size: 21px;
+  --footerSize: 21px;
+
+  /** Homeページ */
+  --homeHeadingSize: 37px;
+  --homeGuidanceLinkSize: 31px;
+  --homeBlogTitleSize: 21px;
+  --homeMeetingDateSize: 21px;
+  --homeInformationTitleSize: 28px;
+  --homeInformationDateSize: 21px;
+  --homeInformationHistorySize: 16px;
+  --homeBlogDateSize: 12px;
+  --homeProjectIconSize: 16px;
+
+  /** Membersページ */
+  --memberTableHeaderSize: 22px;
+
+  /** Guidanceページ */
+  --guidanceLinkButtonSize: 31px;
+
+  /** 行の高さ */
+
+  /** ロゴやタイトル、表の項目などの1行で完結するテキストについては、
+    個々のコンポーネントの都合で配置が変わるので(どうせ思った通りには効かないので)、globals.cssでline-heightを一括で指定することはしない。
+    2行以上のテキストが配置される可能性のある場所に指定する */
+
+  /** 共通 */
+  --baseHeight: 30px;
+  --heading1Height: 46px;
+
+  /** Homeページ */
+
+  /** タイトルが長いブログは折り返す可能性がある */
+  --homeBlogTitleHeight: 30px;
+}
+
+/** 全てのページで共通のCSS */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--headerHeight) + 2lh);
+}
+
+body {
+  font-family: "Noto + Sans + JP", sans-serif;
+  font-size: var(--bodySize);
+  line-height: var(--lineHeight);
+  color: var(--baseTextColor);
+  word-break: auto-phrase;
+  background-color: var(--backgroundColor);
+}
+
+.h1 {
+  font-size: var(--heading1Size);
+  color: var(--heading1TextColor);
+  padding-bottom: 10px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  line-height: var(--heading1Height);
+}
+
+.h2 {
+  font-size: var(--heading2Size);
+  color: var(--heading2TextColor);
+  padding-bottom: 8px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  line-height: var(--heading2Height);
+}
+
+.h3 {
+  font-size: var(--heading3Size);
+  font-weight: bold;
+  color: var(--boldTextColor);
+  padding-bottom: 8px;
+  margin-top: 40px;
+  line-height: var(--heading3Height);
+}
+
+.a {
+  color: var(--linkTextColor);
+}
+
+.a:hover {
+  color: var(--linkTextHoverColor);
+}
+
+p {
+  padding-bottom: 20px;
+}
+
+dl {
+  padding-bottom: 8px;
+}
+
+ul {
+  padding-bottom: 8px;
+}
+
+dt {
+  margin-top: 8px;
+}
